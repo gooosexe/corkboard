@@ -1,5 +1,7 @@
 # corkboard
-Frontend and backend for Corkboard. Made with React and Spring Boot.
+A message board where nothing is permanent. Your posts are always deleted 24 hours after they are posted, with no way to recover them.
+
+Made with React and Spring Boot.
 
 Build and run frontend with
 ```
