@@ -1,0 +1,58 @@
+/*
+#000000 black
+#ffffff white
+#ac1e39 red
+#e1b913 yellow
+#178048 green
+#214ea0 blue
+#3d99C9 light blue
+*/
+
+:root {
+  --white: #ffffff;
+  --grey: #a0a0a0;
+  --black: #000000;
+  --red: #ac1e39;
+  --yellow: #e1b913;
+  --green: #178048;
+  --blue: #214ea0;
+  --light-blue: #3d99c9;
+
+  font-family: Helvetica, system-ui, Avenir, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 0;
+
+  color-scheme: light dark;
+  color: var(--black);
+  background-color: var(--white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--light-blue);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 5.2em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+
