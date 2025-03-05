@@ -10,7 +10,7 @@ interface PostProps {
 
 const Post: FC<PostProps> = ({ author, date, content, postNumber }) => {
   return (
-    <Card className="min-w-3xs max-w-xs mx-0 text-wrap">
+    <Card className="min-w-3xs max-w-xs mx-0 mb-2.5 text-wrap">
       {/* Card Header */}
       <CardHeader>
         <div className="flex justify-between text-sm gap-1.5 text-muted-foreground">
@@ -20,7 +20,7 @@ const Post: FC<PostProps> = ({ author, date, content, postNumber }) => {
       </CardHeader>
 
       {/* Card Content */}
-      <CardContent className="text-2xl text-pretty break-words">
+      <CardContent className="text-2xl overflow-y-auto max-h-80 text-pretty break-words">
         <p>{content}</p>
       </CardContent>
 

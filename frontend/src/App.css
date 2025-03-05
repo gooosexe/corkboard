@@ -27,16 +27,20 @@ body {
   margin: auto;
 }
 
-/* .posts-container {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  grid-auto-flow: dense;
-  gap: 8px;
-  padding: 16px;
-  max-width: 100%;
-} */
+.posts-container {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+  width: auto;
+}
+
+.posts-container-grid_column{
+  padding-left: 30px; /* gutter size offset */
+  row-gap: 10px;
+  background-clip: padding-box;
+}
 
 .header {
   padding: 10px 10px 10px 10px;
