@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: hsl(40, 20%, 94%);
+  --foreground: hsl(40, 15%, 18%);
+  --card: hsl(40, 20%, 94%);
+  --card-foreground: hsl(40, 15%, 18%);
+  --popover: hsl(40, 20%, 94%);
+  --popover-foreground: hsl(40, 15%, 18%);
+  --primary: hsl(25, 65%, 47%);
+  --primary-foreground: hsl(25, 100%, 97%);
+  --secondary: hsl(40, 40%, 70%);
+  --secondary-foreground: hsl(40, 30%, 10%);
+  --muted: hsl(40, 15%, 85%);
+  --muted-foreground: hsl(40, 20%, 50%);
+  --accent: hsl(40, 15%, 85%);
+  --accent-foreground: hsl(40, 15%, 18%);
+  --destructive: hsl(0, 70%, 50%);
+  --destructive-foreground: hsl(0, 10%, 95%);
+  --border: hsl(40, 20%, 80%);
+  --input: hsl(40, 20%, 80%);
+  --ring: hsl(25, 65%, 47%);
+  --radius: 0.5rem;
+  --chart-1: hsl(25, 65%, 47%);
+  --chart-2: hsl(10, 65%, 47%);
+  --chart-3: hsl(340, 70%, 50%);
+  --chart-4: hsl(60, 70%, 40%);
+  --chart-5: hsl(120, 40%, 45%);
+
+  --sidebar-background: hsl(40, 20%, 91%);
+  --sidebar-foreground: hsl(40, 15%, 31%);
+  --sidebar-primary: hsl(25, 65%, 44%);
+  --sidebar-primary-foreground: hsl(25, 100%, 100%);
+  --sidebar-accent: hsl(40, 15%, 82%);
+  --sidebar-accent-foreground: hsl(40, 15%, 18%);
+  --sidebar-border: hsl(40, 20%, 77%);
+  --sidebar-ring: hsl(25, 65%, 44%);
+}
+
+.dark {
+  --background: hsl(40, 15%, 10%);
+  --foreground: hsl(40, 30%, 90%);
+  --card: hsl(40, 15%, 10%);
+  --card-foreground: hsl(40, 30%, 90%);
+  --popover: hsl(40, 15%, 10%);
+  --popover-foreground: hsl(40, 30%, 90%);
+  --primary: hsl(25, 65%, 47%);
+  --primary-foreground: hsl(25, 100%, 97%);
+  --secondary: hsl(40, 30%, 20%);
+  --secondary-foreground: hsl(40, 50%, 80%);
+  --muted: hsl(40, 20%, 15%);
+  --muted-foreground: hsl(40, 30%, 60%);
+  --accent: hsl(40, 20%, 15%);
+  --accent-foreground: hsl(40, 30%, 90%);
+  --destructive: hsl(0, 70%, 50%);
+  --destructive-foreground: hsl(0, 10%, 95%);
+  --border: hsl(40, 30%, 20%);
+  --input: hsl(40, 30%, 20%);
+  --ring: hsl(25, 65%, 47%);
+  --radius: 0.5rem;
+  --chart-1: hsl(340, 65%, 50%);
+  --chart-2: hsl(60, 70%, 40%);
+  --chart-3: hsl(120, 50%, 45%);
+  --chart-4: hsl(10, 65%, 47%);
+  --chart-5: hsl(25, 70%, 50%);
+
+  --sidebar-background: hsl(40, 15%, 2%);
+  --sidebar-foreground: hsl(40, 30%, 50%);
+  --sidebar-primary: hsl(25, 65%, 39%);
+  --sidebar-primary-foreground: hsl(25, 100%, 97%);
+  --sidebar-accent: hsl(40, 20%, 25%);
+  --sidebar-accent-foreground: hsl(40, 30%, 90%);
+  --sidebar-border: hsl(40, 30%, 12%);
+  --sidebar-ring: hsl(25, 65%, 39%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+      .masonry {
+          column-gap: 1.5em;
+          column-count: 1;
+      }
+      .masonry-sm {
+          column-gap: 1.5em;
+          column-count: 2;
+      }
+      .masonry-md {
+          column-gap: 1.5em;
+          column-count: 3;
+      }
+      .break-inside {
+          break-inside: avoid;
+      }
+
+  }
+}
