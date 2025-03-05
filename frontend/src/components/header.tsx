@@ -12,8 +12,10 @@ export function Header() {
   return (
  	 	<div className="header">
     	<h1 className='text-5xl font-bold'>the corkboard.</h1>
-      <ModeToggle />
-      <Button onClick={newPost}>new post.</Button>
+      <div className="flex items-end space-x-3">
+        <ModeToggle />
+        <Button onClick={newPost}>new post.</Button>
+      </div>
     </div>
    )
 }

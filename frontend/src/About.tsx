@@ -1,6 +1,8 @@
 export default function About() {
   return (
-    <div className="max-w-2xl mx-auto p-6 space-y-6 text-center">
+	<>
+	
+	<div className="max-w-2xl mx-auto p-6 space-y-6 text-center">
       <h1 className="text-3xl font-bold">About Corkboard</h1>
       <p className="text-lg text-muted-foreground">
         Corkboard is a simple, ephemeral content-sharing platform designed for quick, 
@@ -21,5 +23,6 @@ export default function About() {
         the pressure of permanence. Drop your thoughts, engage, and let them fade away naturally.
       </p>
     </div>
-  );
+	</>
+      );
 }

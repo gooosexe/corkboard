@@ -38,7 +38,6 @@ body {
 
 .posts-container-grid_column{
   padding-left: 30px; /* gutter size offset */
-  row-gap: 10px;
   background-clip: padding-box;
 }
 

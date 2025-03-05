@@ -15,17 +15,17 @@ const PostList: React.FC = () => {
   const [posts, setPosts] = useState<PostData[]>([])
 	const breakpointColumnsObj = {
     default: 6,
-    1100: 5,
-    700: 4,
-    500: 3,
-    300: 2,
-    100: 1
+    1640: 5,
+    1310: 4,
+    980: 3,
+    650: 2,
+    320: 1
   };
 
   useEffect(() => {
     // Fetch posts from the server
     axios
-      .get<PostData[]>("http://192.168.196.195:8080/api/posts")
+      .get<PostData[]>("http://100.70.92.238:8080/api/posts")
       .then((res) => {
         // Reverse the posts array to display in reverse order
         setPosts(res.data.reverse())
@@ -33,25 +33,23 @@ const PostList: React.FC = () => {
       .catch((err) => console.error(err))
   }, [])
 
-	if (posts.length === 0) return <p>no new posts.</p>
+	if (posts.length === 0) return <p className="posts-container">no new posts.</p>
   return (
-    <div className="posts-container">
-			<Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="posts-container"
-          columnClassName="my-masonry-grid_column"
-        >
-				{posts.map((post) => (
-					<Post
-						key={post.id}
-						author={post.username || "anonymous"}
-						date={DateTime.fromISO(post.createdAt).toRelative() || "just now"}
-						content={post.content}
-						postNumber={post.id}
-					/>
-				))}
-			</Masonry>
-    </div>
+    <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="posts-container"
+        columnClassName="my-masonry-grid_column"
+      >
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          author={post.username || "anonymous"}
+          date={DateTime.fromISO(post.createdAt).toRelative() || "just now"}
+          content={post.content}
+          postNumber={post.id}
+        />
+      ))}
+    </Masonry>
   )
 }
 
