@@ -1,6 +1,5 @@
 import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { FC } from "react"
-import { ScrollArea } from "./components/ui/scroll-area"
 
 interface PostProps {
   author: string
@@ -21,11 +20,9 @@ const Post: FC<PostProps> = ({ author, date, content, postNumber }) => {
       </CardHeader>
 
       {/* Card Content */}
-      <ScrollArea>
       <CardContent className="text-2xl overflow-y-auto max-h-100 text-pretty break-words">
         <p>{content}</p>
       </CardContent>
-      </ScrollArea>
 
       {/* Card Footer */}
       <CardFooter>

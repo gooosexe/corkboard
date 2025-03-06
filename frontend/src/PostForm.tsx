@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -39,14 +38,14 @@ export function PostForm() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "anonymous",
-    },
   })
  
   // 2. Define a submit handler.
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const formData = new FormData();
+    if (values.username.length == 0) {
+      values.username = "anonymous";
+    }
     formData.append("username", values.username);
     formData.append("content", values.content);
     
@@ -77,7 +76,7 @@ export function PostForm() {
             <FormItem>
               <FormLabel>username</FormLabel>
               <FormControl>
-                <Input placeholder="anonymous" className="placeholder:text-muted" {...field} 
+                <Input placeholder="your username. leave blank for anonymous." className="placeholder:text-muted-foreground" {...field} 
                   onChange={(e) => {
                     if (e.target.value.length <= maxUsername) {
                       field.onChange(e);
@@ -89,7 +88,6 @@ export function PostForm() {
                 {(field.value ?? "").length} / {20}
               </div>
               <FormMessage />
-							<FormDescription>your username. leave blank for anonymous.</FormDescription>
             </FormItem>
           )}
         />
@@ -102,7 +100,7 @@ export function PostForm() {
               <FormLabel>content</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="the content of your post. play nice." {...field} 
+                  placeholder="the content of your post. play nice." className="placeholder:text-muted-foreground"{...field} 
                   onChange={(e) => {
                     if (e.target.value.length <= maxCharacters) {
                       field.onChange(e);

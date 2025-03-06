@@ -1,27 +1,9 @@
-/*
-#000000 black
-#ffffff white
-#ac1e39 red
-#e1b913 yellow
-#178048 green
-#214ea0 blue
-#3d99C9 light blue
-*/
 
 #root {
   margin: 0 auto;
   padding: 0;
   text-align: left;
 }
-
-/* .content {
-  font-size: 2em;
-  text-align: left;
-  white-space: normal; 
-  word-break: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-} */
 
 body {
   margin: auto;
@@ -53,27 +35,18 @@ body {
 
 /* Style the scrollbar container */
 ::-webkit-scrollbar {
-  width: 12px; /* width of the vertical scrollbar */
-  height: 12px; /* height of the horizontal scrollbar */
+  width: 10px;
 }
 
-/* Style the scrollbar track */
 ::-webkit-scrollbar-track {
-  border-radius: 10px; /* Rounded corners */
-}
-
-/* Style the scrollbar thumb */
-::-webkit-scrollbar-thumb {
-  background: var(--border); /* Dark gray thumb */
   border-radius: 10px;
 }
 
-/* Hover effect on scrollbar thumb */
-::-webkit-scrollbar-thumb:hover {
-  background: var(--chart-2); /* Darker gray when hovering */
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
 }
 
-/* Optional: style for the scrollbar corner (where the horizontal and vertical scrollbars meet) */
-::-webkit-scrollbar-corner {
-  background: #f1f1f1;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chart-2);
 }

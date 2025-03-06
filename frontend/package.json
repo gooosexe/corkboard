@@ -30,7 +30,6 @@
     "sass": "^1.85.1",
     "tailwind-merge": "^3.0.2",
     "tailwind-variants": "^0.3.1",
-    "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -47,6 +46,7 @@
     "globals": "^15.15.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.9",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "~5.7.3",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
