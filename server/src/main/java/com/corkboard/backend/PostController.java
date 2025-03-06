@@ -3,6 +3,7 @@ package com.corkboard.backend;
 import com.corkboard.backend.exceptions.PostNotFoundException;
 import lombok.RequiredArgsConstructor;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 @RestController // defines a REST api
 @RequestMapping("/api/posts") // set base path
 @CrossOrigin(originPatterns = "*") // allow requests from any origin
@@ -18,6 +20,7 @@ import java.util.List;
 public class PostController {
 
     private final PostRepository postRepository;
+    private final LogService logService;
 
     @GetMapping
     public List<Post> getAllPosts(HttpServletRequest request) {
@@ -33,8 +36,8 @@ public class PostController {
         logPostRequest(request, username);
         String filePath;
         if (file != null && !file.isEmpty()) {
+            transferFile(file);
             filePath = "uploads/" + file.getOriginalFilename();
-            file.transferTo(new java.io.File(filePath));
         } else {
             filePath = null;
         }
@@ -50,7 +53,7 @@ public class PostController {
     }
 
     public void logPostRequest(HttpServletRequest request, String username) {
-        System.out.println("Post request received from " + request.getRemoteAddr() + " under username " + username);
+        logService.logInfo("POST from " + request.getRemoteAddr() + " at " + LocalDateTime.now() + " by " + username);
     }
 
     public void transferFile(MultipartFile file) throws IOException {
@@ -58,6 +61,6 @@ public class PostController {
     }
 
     public void logGetRequest(HttpServletRequest request) {
-        System.out.println("Get request received from " + request.getRemoteAddr());
+        logService.logInfo("GET from " + request.getRemoteAddr() + " at " + LocalDateTime.now());
     }
 }
