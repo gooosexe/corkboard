@@ -50,3 +50,30 @@ body {
   display: flex;
   background-color: var(--secondary);
 }
+
+/* Style the scrollbar container */
+::-webkit-scrollbar {
+  width: 12px; /* width of the vertical scrollbar */
+  height: 12px; /* height of the horizontal scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: var(--border); /* Dark gray thumb */
+  border-radius: 10px;
+}
+
+/* Hover effect on scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chart-2); /* Darker gray when hovering */
+}
+
+/* Optional: style for the scrollbar corner (where the horizontal and vertical scrollbars meet) */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
