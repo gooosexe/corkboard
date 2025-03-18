@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/gooosexe/corkboard-backend
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/gooosexe/corkboard-frontend
