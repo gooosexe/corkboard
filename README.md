@@ -1,6 +1,6 @@
 # corkboard [UNDER MAINTENANCE]
 
-corkboard is a lightweight, ephemeral message board where users can post content anonymously or with a username. all posts automatically disappear after 24 hours, ensuring a fresh and temporary discussion space.
+corkboard is a lightweight, ephemeral message board where users can post content anonymously or with a username. your posts automatically disappear after 24 hours.
 
 ## features
 - **anonymous or named posting**: users can choose to post with a username or remain anonymous.
